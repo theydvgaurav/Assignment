@@ -48,5 +48,10 @@ Backend is made using Node.js and Mongo Atlas. There are two apis:
 
 ### Screenshots - Frontend
 <img src="screenshots/1.png" data-canonical-src="screenshots/1.png" width="800" />
+<img src="screenshots/2.png" data-canonical-src="screenshots/1.png" width="800" />
+
+### Screenshots - Backend
+<img src="screenshots/3.png" data-canonical-src="screenshots/1.png" width="800" />
+<img src="screenshots/4.png" data-canonical-src="screenshots/1.png" width="800" />
 
 
