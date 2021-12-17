@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './Home.css'
+import DetailsCard from './DetailsCard'
 
 const Home = () => {
 
@@ -11,24 +12,33 @@ const Home = () => {
     const getData = (event) => {
         event.preventDefault();
 
-        axios.get(`http://127.0.0.1:4000/app/reports?cmdtyID=${query}`)
+        axios.get(`https://assignment-gydv.herokuapp.com/reports?cmdtyID=${query}`)
             .then(response => {
-                setData(response.data)})
+                setData(response.data)
+            })
     }
 
     const Querychangehandler = (event) => {
         setQuery(event.target.value)
     }
 
-    console.log(data);
+    console.log(data)
 
     return (
         <div className='main' >
-            <div className='formcontainer'>
-                <form onSubmit={getData} >
+            <form onSubmit={getData} >
+                <div className='formcontainer'>
                     <input className='input' placeholder='Commodity ID' type='text' onChange={Querychangehandler} />
                     <button className='button' type='submit' >Get Details</button>
-                </form>
+                </div>
+            </form>
+            <div className='cardContainer'>
+                {
+                    data.map((reportDetails) => (
+                        <DetailsCard item={reportDetails} />
+                    )
+                    )
+                }
             </div>
         </div>
     )
